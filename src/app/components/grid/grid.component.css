@@ -6,6 +6,22 @@
 	grid-template-rows: 2fr 6fr 6fr 6fr 10fr 8fr;
 	grid-gap: 6px 3px;
 }
+h1 {
+	margin: 0;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+}
+h2 {
+	margin: 0;
+	font-size: 1.1rem;
+	color: green;
+	letter-spacing: 6px;
+	text-transform: lowercase;
+}
+div {
+	box-sizing: border-box;
+	padding: 10px;
+}
 .container div {
 	background-color: #ddd;
 }

@@ -1,0 +1,8 @@
+<form [formGroup]="fooForm" novalidate>
+	<input type="text" formControlName="name">
+	<div formGroupName="address">
+		<input type="text" formControlName="street">
+	</div>
+</form>
+<p>{{fooForm.value | json}}</p>
+<p>{{fooForm.status | json}}</p>

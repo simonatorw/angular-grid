@@ -1,9 +1,49 @@
 <div class="container">
-	<div>1</div>
-	<div>2</div>
-	<div>3</div>
-	<div>4</div>
-	<div>5</div>
+	<div>
+		<h1 #header>{{title.title }}</h1>
+		<h2>{{title.subTitle}}</h2>
+	</div>
+	<div [class.radioControlMellow]="val === 'foo'">
+		<input [(ngModel)]="title.subTitle" #duh>{{duh.value}}
+	</div>
+	<div>
+		<data-grid [title]="title" [(crap)]="val"></data-grid>
+		<data-grid [title]="title2" [(crap)]="val2"></data-grid>
+		<div [ngClass]="{ radioControlCool: val === 'foo', radioControlMellow: val !== 'foo' }">
+			<label>
+				<input type="radio" name="colors" (click)="color='violet'">Violet
+			</label>
+			<label>
+				<input type="radio" name="colors" (click)="color='yellow'">Yellow
+			</label>
+			<label>
+				<input type="radio" name="colors" (click)="color='cyan'">Cyan
+			</label>
+		</div>
+		<button [@heroState]="state" (click)="toggleState()">Click</button>
+		<span [appHighlight]="color">{{val | ator:2}}</span>
+	</div>
+	<div>
+		<div [hidden]="submitted">
+			<form #userForm="ngForm" (submit)="submitForm()">
+				<input type="text" [(ngModel)]="model.name" name="name" required>
+				<input type="text" [(ngModel)]="model.id" name="id">
+				<button type="submit" [disabled]="!userForm.form.valid">Submit</button>
+			</form>
+		</div>
+		<div [hidden]="!submitted">Form submitted!</div>
+	</div>
+	<div>
+		<app-reactive-form></app-reactive-form>
+		<p [hidden]="doh">{{count$ | async}}</p>
+		<button (click)="increment()">Add</button>
+		<button (click)="decrement()">Subtract</button>
+		<button (click)="doh = !doh">Toggle</button>
+		<app-content>
+			<h1 class="foo">Foo</h1>
+			<h2 class="bar">Bar</h2>
+		</app-content>
+	</div>
 	<div>6</div>
 	<div>7</div>
 	<div>8</div>

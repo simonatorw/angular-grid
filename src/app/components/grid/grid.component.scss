@@ -1,0 +1,51 @@
+:host-context(#app) .container div {
+	border: 2px solid green;
+}
+h1 {
+	margin: 0;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+}
+h2 {
+	margin: 0;
+	font-size: 1.1rem;
+	color: green;
+	letter-spacing: 6px;
+	text-transform: lowercase;
+}
+.container {
+	margin: 0 auto;
+	max-width: 1200px;	
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 2fr 6fr 6fr 6fr 10fr 8fr;
+	grid-gap: 6px 3px;
+
+	div {
+		background-color: #ddd;
+		box-sizing: border-box;
+		padding: 10px;
+		
+		&:first-child {
+			grid-column: 1/4;
+		}
+		&:nth-child(5) {
+			grid-column: 2;
+			grid-row: 2/5;
+		}
+		&:nth-child(6) {
+			grid-column: 3;
+			grid-row: 2/7;
+		}
+		&:nth-child(7) {
+			grid-column: 1/3;
+		}		
+	}
+	.radioControlCool {
+		background-color: cyan;
+	}
+	.radioControlMellow {
+		background-color: lavender;
+	}
+}
+

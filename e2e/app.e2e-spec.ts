@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular-grid App', () => {
+describe('ng-grid App', () => {
   let page: AppPage;
 
   beforeEach(() => {
