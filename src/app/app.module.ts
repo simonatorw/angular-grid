@@ -14,6 +14,7 @@ import { AtorPipe } from './pipes/ator.pipe';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { counterReducer } from './store/reducers/counter';
 import { ContentComponent } from './components/content/content.component';
+import { GreyDirective } from './directives/grey.directive';
 
 const DUH = new InjectionToken<string>('duh');
 
@@ -25,7 +26,8 @@ const DUH = new InjectionToken<string>('duh');
 	HighlightDirective,
 	AtorPipe,
 	ReactiveFormComponent,
-	ContentComponent
+	ContentComponent,
+	GreyDirective
   ],
   imports: [
     BrowserModule,

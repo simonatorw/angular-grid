@@ -4,7 +4,7 @@
 		<h2>{{title.subTitle}}</h2>
 	</div>
 	<div [class.radioControlMellow]="val === 'foo'">
-		<input [(ngModel)]="title.subTitle" #duh>{{duh.value}}
+		<input [(ngModel)]="title.subTitle" #duh appGrey>{{duh.value}}
 	</div>
 	<div>
 		<data-grid [title]="title" [(crap)]="val"></data-grid>
@@ -22,6 +22,7 @@
 		</div>
 		<button [@heroState]="state" (click)="toggleState()">Click</button>
 		<span [appHighlight]="color">{{val | ator:2}}</span>
+		<span *ngIf="val === 'foo'">Now you see me</span>
 	</div>
 	<div>
 		<div [hidden]="submitted">
