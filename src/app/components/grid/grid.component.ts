@@ -23,6 +23,7 @@ import { INCREMENT, DECREMENT, RESET } from '../../store/reducers/counter';
 import { Title } from '../../data/title';
 import { UserData } from '../../data/user-data';
 import { DataGridComponent } from '../data-grid/data-grid.component';
+import { RxService } from '../../services/rx.service';
 
 interface AppState {
   count: number;
@@ -74,13 +75,18 @@ export class GridComponent implements OnInit, AfterViewInit, AfterContentInit {
 	val = 'foo';
 	model = new UserData('Simonator', 1);
 	doh: boolean;
+	dd = new Date;
+	promiseData = rxService.getPromise();
+	obsData = rxService.getObservable();
+	obsStr = rxService.getObsStr();
 	@ViewChild(DataGridComponent) dataGrid: DataGridComponent;
 	@ViewChildren(DataGridComponent) dataGrids: QueryList<DataGridComponent>;
 	@ViewChild('header') headerTitle: ElementRef;
 	@ContentChild(DataGridComponent)  dataGridContent: DataGridComponent;
 
 	constructor(
-		private store: Store<AppState>
+		private store: Store<AppState>,
+		private rxService: RxService
 	) {
 		this.count$ = store.pipe(select('count'));
 		console.log('datagrid1:', this.dataGrid);
@@ -99,7 +105,7 @@ export class GridComponent implements OnInit, AfterViewInit, AfterContentInit {
 	}
 	
 	ngOnInit() {
-		console.log(1);
+		//this.rxService.getObservable().subscribe(data => console.log(data));
 	}
 
 	toggleState() {

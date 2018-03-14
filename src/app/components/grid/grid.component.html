@@ -44,6 +44,24 @@
 			<h1 class="foo">Foo</h1>
 			<h2 class="bar">Bar</h2>
 		</app-content>
+		<div>
+			<span>{{1000 | currency}}</span>
+			<span>{{1000 | currency: 'CAD': 'symbol-narrow'}}</span>
+			<span>{{dd | date: 'shortTime'}}</span>
+			<span>{{dd | date: 'fullDate'}}</span>
+			<span>{{dd | date: 'M/d/y h:m:s'}}</span>
+			<span>{{.33333 | number: '1.2-2'}}</span>
+			<span>{{.3 | number: '1.2-2'}}</span>
+			<span>{{.3 | percent: '1.2-2'}}</span>
+			<span>{{[0, 1, 2, 3, 4, 5, 6] | slice:0:-6}}</span>
+		</div>
+		<div>
+			<span ngNonBindable>{{promiseData}}</span>
+			<span>{{promiseData | async}}</span>
+			<span>{{obsData | async}}</span>
+			<span>{{obsStr | async}}</span>
+		</div>
+		<div>{{'Fuck you! Stop calling me fuckface' | bleep}}</div>
 	</div>
 	<div>6</div>
 	<div>7</div>

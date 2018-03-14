@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { GridComponent } from './components/grid/grid.component';
 import { DataGridComponent } from './components/data-grid/data-grid.component';
+import { RxService } from './services/rx.service';
 import { DataService } from './services/data.service';
 import { HighlightDirective } from './directives/highlight.directive';
 import { AtorPipe } from './pipes/ator.pipe';
@@ -15,6 +16,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
 import { counterReducer } from './store/reducers/counter';
 import { ContentComponent } from './components/content/content.component';
 import { GreyDirective } from './directives/grey.directive';
+import { BleepPipe } from './pipes/bleep.pipe';
 
 const DUH = new InjectionToken<string>('duh');
 
@@ -27,7 +29,8 @@ const DUH = new InjectionToken<string>('duh');
 	AtorPipe,
 	ReactiveFormComponent,
 	ContentComponent,
-	GreyDirective
+	GreyDirective,
+	BleepPipe
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ const DUH = new InjectionToken<string>('duh');
   ],
   providers: [
 		DataService,
+		RxService,
 		{ provide: DUH, useValue: 'duh' }
 	],
   bootstrap: [AppComponent]
