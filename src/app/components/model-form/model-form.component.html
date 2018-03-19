@@ -1,0 +1,13 @@
+<form [formGroup]="myForm" novalidate>
+	<fieldset formGroupName="name">
+		<input type="text" formControlName="firstName" 
+			[ngClass]="{ 'invalid': firstName.invalid && firstName.dirty }">
+		<input type="text" formControlName="lastName">
+	</fieldset>
+	<input type="text" formControlName="email" required>
+	<input type="text" formControlName="password" required>
+	<select>
+		<option *ngFor="let opt of options" [value]="opt">{{opt}}</option>
+	</select>	
+</form>
+<pre>{{myForm.value | json}}</pre>

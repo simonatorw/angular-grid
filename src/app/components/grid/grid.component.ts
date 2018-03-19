@@ -73,12 +73,14 @@ export class GridComponent implements OnInit, AfterViewInit, AfterContentInit {
 		subTitle: 'Research'
 	};	
 	val = 'foo';
+	val2;
+	color;
 	model = new UserData('Simonator', 1);
 	doh: boolean;
 	dd = new Date;
-	promiseData = rxService.getPromise();
-	obsData = rxService.getObservable();
-	obsStr = rxService.getObsStr();
+	promiseData = this.rxService.getPromise();
+	obsData = this.rxService.getObservable();
+	obsStr = this.rxService.getObsStr();
 	@ViewChild(DataGridComponent) dataGrid: DataGridComponent;
 	@ViewChildren(DataGridComponent) dataGrids: QueryList<DataGridComponent>;
 	@ViewChild('header') headerTitle: ElementRef;
@@ -89,7 +91,7 @@ export class GridComponent implements OnInit, AfterViewInit, AfterContentInit {
 		private rxService: RxService
 	) {
 		this.count$ = store.pipe(select('count'));
-		console.log('datagrid1:', this.dataGrid);
+		console.log('datagrid1:', 'hello', this.dataGrid);
 	}
 	
 	ngAfterContentInit() {

@@ -22,7 +22,7 @@ import { Title } from '../../data/title';
 export class DataGridComponent implements OnChanges, OnInit, AfterViewInit {
 	i = 0;
 
-	constructor( private dataService: DataService ) {}
+	constructor( public dataService: DataService ) {}
 
 	@Input() title: Title;
 	@Input() crap: string;
