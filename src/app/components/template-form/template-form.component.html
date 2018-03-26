@@ -1,0 +1,15 @@
+<form novalidate #f="ngForm" (ngSubmit)="onSubmit()">
+	<fieldset ngModelGroup="name" 
+		[ngClass]="{ error: firstName.invalid && (firstName.dirty || firstName.touched) }">
+		<input type="text" name="firstName" 
+			[(ngModel)]="model.firstName" #firstName="ngModel" required>
+		<input type="text" name="lastName" [(ngModel)]="model.lastName">
+	</fieldset>
+	<input type="text" name="email" [(ngModel)]="model.email" required>
+	<input type="text" name="password" [(ngModel)]="model.password" required>
+	<select>
+		<option *ngFor="let opt of options" [value]="opt">{{opt}}</option>
+	</select>
+	<button type="submit" [disabled]="f.invalid">Submit</button>
+</form>
+<pre>{{f.value | json}}</pre>

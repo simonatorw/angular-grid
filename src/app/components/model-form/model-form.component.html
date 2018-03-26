@@ -8,6 +8,11 @@
 	<input type="text" formControlName="password" required>
 	<select>
 		<option *ngFor="let opt of options" [value]="opt">{{opt}}</option>
-	</select>	
+	</select>
+	<input type="search" placeholder="Enter search" 
+		[formControl]="searchField">
+	<ul>
+		<li *ngFor="let search of searches">{{search}}</li>
+	</ul>
 </form>
 <pre>{{myForm.value | json}}</pre>

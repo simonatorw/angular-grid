@@ -5,6 +5,7 @@
 	</div>
 	<div [class.radioControlMellow]="val === 'foo'">
 		<input [(ngModel)]="title.subTitle" #duh appGrey>{{duh.value}}
+		<app-template-form></app-template-form>
 	</div>
 	<div>
 		<data-grid [title]="title" [(crap)]="val"></data-grid>

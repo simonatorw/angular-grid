@@ -18,6 +18,7 @@ import { ContentComponent } from './components/content/content.component';
 import { GreyDirective } from './directives/grey.directive';
 import { BleepPipe } from './pipes/bleep.pipe';
 import { ModelFormComponent } from './components/model-form/model-form.component';
+import { TemplateFormComponent } from './components/template-form/template-form.component';
 
 const DUH = new InjectionToken<string>('duh');
 
@@ -32,7 +33,8 @@ const DUH = new InjectionToken<string>('duh');
 	ContentComponent,
 	GreyDirective,
 	BleepPipe,
-	ModelFormComponent
+	ModelFormComponent,
+	TemplateFormComponent
   ],
   imports: [
     BrowserModule,

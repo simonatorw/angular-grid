@@ -5,6 +5,7 @@ import {
 	FormControl,
 	Validators
 } from '@angular/forms';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-model-form',
@@ -20,12 +21,14 @@ export class ModelFormComponent implements OnInit {
 	'doh',
 	'duh'
   ];
+  searches: string[] = [];
   myForm: FormGroup;
   firstName: FormControl;
   lastName: FormControl;
   email: FormControl;
   password: FormControl;
   language: FormControl;
+  searchField: FormControl;
   
 	ngOnInit() {
 		this.firstName = new FormControl('', Validators.required);
@@ -43,8 +46,13 @@ export class ModelFormComponent implements OnInit {
 			password: this.password,
 			language: this.language
 		});
+		
+		this.searchField = new FormControl();
+		this.searchField.valueChanges
+			.debounceTime(300)
+			.distinctUntilChanged()
+			.subscribe(term => {
+				this.searches.push(term);
+			});
 	}
-  
-
-
 }
