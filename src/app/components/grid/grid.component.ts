@@ -85,7 +85,7 @@ export class GridComponent implements OnInit, AfterViewInit, AfterContentInit {
 	@ViewChildren(DataGridComponent) dataGrids: QueryList<DataGridComponent>;
 	@ViewChild('header') headerTitle: ElementRef;
 	@ContentChild(DataGridComponent)  dataGridContent: DataGridComponent;
-
+	//hello
 	constructor(
 		private store: Store<AppState>,
 		private rxService: RxService
